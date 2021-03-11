@@ -5,14 +5,9 @@ const database = path.join(__dirname, "../db/db.json");
 const { v4: uuidv4 } = require("uuid");
 const id = uuidv4();
 
-console.log({ v4: uuidv4 });
-console.log(id);
-
 router.get("/notes", (req, res) => {
-  console.log("hello");
   fs.readFile(database, "utf8", (err, data) => {
     if (err) throw err;
-    console.log(data);
     const readData = JSON.parse(data);
     res.send(readData);
   });
@@ -21,7 +16,6 @@ router.get("/notes", (req, res) => {
 router.post("/notes", (req, res) => {
   fs.readFile(database, "utf8", (err, data) => {
     if (err) throw err;
-    console.log(data);
 
     const newNote = JSON.parse(data);
 
