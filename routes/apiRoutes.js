@@ -2,8 +2,11 @@ const router = require("express").Router();
 const fs = require("fs");
 const path = require("path");
 const database = path.join(__dirname, "../db/db.json");
+const { v4: uuidv4 } = require("uuid");
+const id = uuidv4();
 
-console.log(database);
+console.log({ v4: uuidv4 });
+console.log(id);
 
 router.get("/notes", (req, res) => {
   console.log("hello");
@@ -25,6 +28,7 @@ router.post("/notes", (req, res) => {
     newNote.push({
       title: req.body.title,
       text: req.body.text,
+      id: id,
     });
 
     fs.writeFile(database, JSON.stringify(newNote), (err) => {
