@@ -36,11 +36,10 @@ router.delete("/notes/:id", (req, res) => {
   console.log("hello");
   fs.readFile(database, "utf8", (err, data) => {
     const deleteID = req.params.id;
-    console.log(deleteID);
+
     dbData = JSON.parse(data);
-    console.log(dbData);
+
     const deleteData = dbData.filter((data) => data.id !== deleteID);
-    console.log(deleteData);
 
     fs.writeFile(database, JSON.stringify(deleteData), (err) => {
       if (err) return res.JSON({ err: "Problem deleting notes" });
