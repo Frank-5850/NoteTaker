@@ -7,6 +7,7 @@ const apiRoutes = require("./routes/apiRoutes");
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(express.static("/public"));
 
 app.use("/", clientRoutes);
 app.use("/api", apiRoutes);
