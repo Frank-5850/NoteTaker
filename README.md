@@ -16,6 +16,6 @@ Need to create update routes
 
 ## Links:
 
-[follow this link for the github page](https://github.com/Frank-5850/NoteTaker)
+Follow this link for the deployed application [click me](https://github.com/Frank-5850/NoteTaker)
 
-[follow this link for the deployed application](./Assets/11-express-homework-demo-02.png)
+Follow this link for the deployed application [click me](https://notetaker5850.herokuapp.com/)
